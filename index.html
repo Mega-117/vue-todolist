@@ -36,12 +36,11 @@
                                 id="button-addon2">Aggiungi</button>
                         </div>
                         <ul class="list-group">
-                            <li v-for="element in taskList"
+                            <li v-for="(element, i) in taskList"
                                 class="list-group-item d-flex justify-content-between align-items-center border-left-li">
 
-                                A list item
-
-                                <i class="fas fa-times"></i>
+                                {{i}} {{element}}
+                                <button class="btn-close"></button>
                             </li>
 
                         </ul>
