@@ -12,8 +12,18 @@ window.addEventListener("DOMContentLoaded", function () {
         },
         methods: {
             addToTaskList() {
-                this.taskList.push(this.newTaskItem);
-                this.newTaskItem = "";
+                /* controllo doppioni */
+                let elementoEsiste = this.taskList.find((element) => {
+                    return element.toLowerCase() === this.newTaskItem.toLowerCase();
+                });
+                /* se esiste mi fermo */
+                if (elementoEsiste) {
+                    return alert("errore");
+                } else {
+                    /* altrimenti pusha nel array */
+                    this.taskList.push(this.newTaskItem.trim());
+                    this.newTaskItem = "";
+                }
             }
         }
     });
